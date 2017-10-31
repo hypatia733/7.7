@@ -20,6 +20,7 @@ def get_data_points():
     while input != '':
         if data == '-1':
             display_table()
+            display_bar()
             break
         elif ',' not in data:
             print('Error. No comma in string')
@@ -54,5 +55,13 @@ def display_table():
     while i < len(data_points_ints):
         print(f'{data_points_strings[i]:20}|{data_points_ints[i]:>23}')
         i +=1
+
+
+def display_bar():
+    i = 0
+    while i < len(data_points_ints):
+        stars = str('*' * int(data_points_ints[i]))
+        print(f'{data_points_strings[i]:>20} {stars}')
+        i += 1
 
 get_data_points()

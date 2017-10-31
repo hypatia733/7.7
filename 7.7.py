@@ -1,15 +1,12 @@
 
 title = str(input('Enter a title for the data:\n'))
-print('You entered:', title)
-print()
+print('You entered: %s\n', % title)
 
 column1 = str(input('Enter column 1 heading:\n'))
-print('You entered:', column1)
-print()
+print('You entered: %s\n', % column1)
 
 column2 = str(input('Enter column 2 heading:\n'))
-print('You entered:', column2)
-print()
+print('You entered: %s\n', % column2)
 
 data_points_strings = []
 data_points_ints = []
@@ -23,10 +20,10 @@ def get_data_points():
             display_bar()
             break
         elif ',' not in data:
-            print('Error. No comma in string')
+            print('Error. No comma in string\n')
             get_data_points()
         elif data.count(',') >= 2:
-            print('Error. Too many commas in input.')
+            print('Error. Too many commas in input.\n')
             get_data_points()
             #FIXME: 'Comma not followed by integer' condition
         else:
@@ -37,10 +34,10 @@ def get_data_points():
                 single_data_points[i] = single_data_points[i].strip()
                 i += 1
             if not single_data_points[1].isnumeric():
-                print('Error: Comma not followed by an integer.')
+                print('Error: Comma not followed by an integer.\n')
                 get_data_points()
-            print('Data string:', single_data_points[0])
-            print('Data integer:', single_data_points[1])
+            print('Data string: %s', % single_data_points[0])
+            print('Data integer: %s\n', % single_data_points[1])
             data_points_strings.append(single_data_points[0])
             data_points_ints.append(single_data_points[1])
             get_data_points()
@@ -55,6 +52,7 @@ def display_table():
     while i < len(data_points_ints):
         print(f'{data_points_strings[i]:20}|{data_points_ints[i]:>23}')
         i +=1
+    print('\n')
 
 
 def display_bar():

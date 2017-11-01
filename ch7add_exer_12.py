@@ -23,3 +23,5 @@ def pig_latin(input):
 sentence = input('Enter a sentence\n')
 pig_latin(sentence)
 
+# Final note - I would have liked to have the program take note of whether the first letter is capital, change it to lower when it gets moved,
+# and then change to new first letter to upper (only if the original first was upper), but I don't have time tonight.
